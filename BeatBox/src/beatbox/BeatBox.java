@@ -43,9 +43,12 @@ public class BeatBox {
 		JButton downTempo = new JButton("Tempo Down");
 		buttonBox.add(downTempo);
 		
+		Font font = new Font("serif", Font.PLAIN, 16);
 		Box nameBox = new Box(BoxLayout.Y_AXIS);
 		for(int i=0; i<16; i++) {
-			nameBox.add(new JLabel(instrumentNames[i]));
+			JLabel label = new JLabel(instrumentNames[i]);
+			label.setFont(font);
+			nameBox.add(label);
 		}
 		
 		background.add(BorderLayout.EAST, buttonBox);
@@ -65,7 +68,7 @@ public class BeatBox {
 		}
 		
 		frame.getContentPane().add(background);
-		frame.setBounds(50, 50, 300, 300);
+		frame.setBounds(50, 50, 350, 350);
 		frame.pack();
 		frame.setVisible(true);
 	}
